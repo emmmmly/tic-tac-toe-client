@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe: a strategy game!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,37 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic-Tac-Toe!</h1>
+      <h6 id="message" class="alert-secondary">Welcome!</h6>
+
+
+      <div id="user-account-actions">
+        <div id="buttons">
+          <button id="signUpButton" class="btn btn-primary" type="button">Sign-Up</button>
+          <button id="signInButton" class="btn btn-primary" type="button">Sign-In</button>
+          <button id="signOutButton" class="btn btn-primary" type="button">Sign-Out</button>
+        </div>
+        <form id="sign-up">
+          <h3>Sign-Up</h3>
+          <label for="signUpEmail" class="form-table">Email address</label>
+          <input name="credentials[email]" id="signUpEmail" class="form-control" type="text">
+          <label for="signUpPassword" class="form-table">Password</label>
+          <input name="credentials[password]" id="signUpPassword" class="form-control" type="password">
+          <label for="signUpPasswordConfirmation" class="form-table">Confirm Password</label>
+          <input name="credentials[password_confirmation]" id="signUpPasswordConfirmation" class="form-control" type="password">
+          <input type="submit" value="Sign-Up" class="btn btn-primary">
+        </form>
+
+        <form id="sign-in">
+          <h3>Sign-In</h3>
+          <label for="signInEmail" class="form-table">Email address</label>
+          <input name="credentials[email]" id="signInEmail" class="form-control" type="text">
+          <label for="signInPassword" class="form-table">Password</label>
+          <input name="credentials[password]" id="signInPassword" class="form-control" type="password">
+          <input type="submit" value="Sign-In" class="btn btn-primary">
+        </form>
+
+
+      </div>
     </body>
 </html>

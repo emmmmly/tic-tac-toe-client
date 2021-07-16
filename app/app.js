@@ -1,9 +1,29 @@
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+'use strict'
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const authEvents = require('./auth/events')
 
 $(() => {
-  // your JS code goes here
+  // show and hide buttons
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#signUpButton').on('click', () => {
+    console.log('sign-up clicked')
+    $('#signUpButton').hide()
+    $('#signInButton').show()
+    $('#sign-up').show()
+    $('#sign-in').hide()
+  })
+  $('#signInButton').on('click', () => {
+    console.log('sign-up clicked')
+    $('#signUpButton').show()
+    $('#signInButton').hide()
+    $('#sign-in').show()
+    $('#sign-up').hide()
+  })
+  $('#signOutButton').hide()
+
+  // form listeners
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#signOutButton').on('click', authEvents.onSignOut)
 })
