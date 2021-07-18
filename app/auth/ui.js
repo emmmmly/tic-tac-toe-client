@@ -9,7 +9,6 @@ const onSignUpSuccess = function (response) {
   $('#message').show()
   $('#sign-up').hide()
   $('#sign-in').show()
-
 }
 const onSignInSuccess = function (response) {
   console.log('in then')
@@ -20,7 +19,7 @@ const onSignInSuccess = function (response) {
   $('#signUpButton').hide()
   $('#signInButton').hide()
   $('#signOutButton').show()
-
+  $('#newGameButton').show()
 }
 
 const onSignOutSuccess = function () {
@@ -29,6 +28,8 @@ const onSignOutSuccess = function () {
   $('#signOutButton').hide()
   $('#signUpButton').show()
   $('#signInButton').show()
+  $('#game-board').hide()
+  $('#newGameButton').hide()
   $('#message').hide(3000)
 }
 
@@ -44,9 +45,3 @@ module.exports = {
   onFailure
 
 }
-
-// $('#sign-up').hide()
-// $('#sign-in').hide()
-// $('#signUpButton').hide()
-// $('#signInButton').show()
-// $('#signOutButton').hide()
