@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-
+// TO DO: write a function to handle the various shows and hides
 const onSignUpSuccess = function (response) {
   console.log('in then')
   console.log(response)
@@ -9,7 +9,9 @@ const onSignUpSuccess = function (response) {
   $('#message').show()
   $('#sign-up').hide()
   $('#sign-in').show()
+  $('#signInButton').hide()
 }
+
 const onSignInSuccess = function (response) {
   console.log('in then')
   store.user = response.user
@@ -33,6 +35,12 @@ const onSignOutSuccess = function () {
   $('#message').hide(3000)
 }
 
+const onNewGameSuccess = function (response) {
+  console.log('new games started')
+  store.game = response.game
+  console.log (store.game)
+}
+
 const onFailure = function () {
   console.log('in catch')
   $('#message').text('TRY AND TRY AGAIN!')
@@ -42,6 +50,7 @@ module.exports = {
   onSignUpSuccess,
   onSignInSuccess,
   onSignOutSuccess,
+  onNewGameSuccess,
   onFailure
 
 }

@@ -1,4 +1,5 @@
 'use strict'
+const { post } = require('jquery')
 const store = require('./../store')
 
 const signUp = function (data) {
@@ -27,8 +28,20 @@ const signOut = function () {
   })
 }
 
+const newGame = function () {
+  return $.ajax({
+    url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token,
+      data: {}
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newGame
 }

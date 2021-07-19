@@ -36,6 +36,9 @@ const onSignOut = function () {
 // new game event handler
 const onNewGame = function () {
   $('#game-board').show()
+  api.newGame()
+    .then(ui.onNewGameSuccess)
+    .catch(ui.onFailure)
 }
 
 module.exports = {
