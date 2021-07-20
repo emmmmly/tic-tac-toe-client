@@ -10,3 +10,6 @@ curl "https://tic-tac-toe-api-development.herokuapp.com/sign-in/" \
 }'
 
 echo
+
+
+# EMAIL="nick@nic.nic" PASSWORD="123" sh curl-scripts/auth/sign-in.sh

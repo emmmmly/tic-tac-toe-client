@@ -1,5 +1,4 @@
 'use strict'
-const { post } = require('jquery')
 const store = require('./../store')
 const config = require('./../config')
 
@@ -40,9 +39,23 @@ const newGame = function () {
   })
 }
 
+const gameUpdate = function (game) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      game
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  newGame
+  newGame,
+  gameUpdate
 }

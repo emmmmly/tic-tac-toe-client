@@ -2,10 +2,11 @@
 
 const store = require('../store')
 // TO DO: write a function to handle the various shows and hides
+
 const onSignUpSuccess = function (response) {
-  console.log('in then')
+  console.log('in then for sign-up')
   console.log(response)
-  $('#message').text(`Great Success! You signed up with the email ${response.user.email}`)
+  $('#message').text('Great Success! Thanks for signing up')
   $('#message').show()
   $('#sign-up').hide()
   $('#sign-in').show()
@@ -13,9 +14,9 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignInSuccess = function (response) {
-  console.log('in then')
+  console.log('in then for sign-in')
   store.user = response.user
-  $('#message').text('Great Success! You are now signed in.')
+  $('#message').text(`Great Success! You are signed in as ${store.user.email}`)
   $('#message').show()
   $('#sign-in').hide()
   $('#signUpButton').hide()
@@ -25,7 +26,7 @@ const onSignInSuccess = function (response) {
 }
 
 const onSignOutSuccess = function () {
-  console.log('in then')
+  console.log('in then for Sign Out')
   $('#message').text('Great Success! You are now signed out')
   $('#signOutButton').hide()
   $('#signUpButton').show()
@@ -36,14 +37,17 @@ const onSignOutSuccess = function () {
 }
 
 const onNewGameSuccess = function (response) {
-  console.log('new games started')
+  console.log('in then for new game')
   store.game = response.game
-  console.log (store.game)
+  console.log('game id is ', store.game._id)
+}
+const onGameUpdate = function (response) {
+  console.log('in then for game update')
 }
 
 const onFailure = function () {
   console.log('in catch')
-  $('#message').text('TRY AND TRY AGAIN!')
+  $('#message').text('Uh OH! Something went wrong, please try again.')
 }
 
 module.exports = {
@@ -51,6 +55,6 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
+  onGameUpdate,
   onFailure
-
 }

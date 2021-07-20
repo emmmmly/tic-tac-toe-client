@@ -12,56 +12,52 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1 class="h1">Tic-Tac-Toe!</h1>
-      <h5 class="text-muted">a strategy game</h5>
-      <h6 id="message" class="alert-secondary">Welcome!</h6>
+      <h1>Tic-Tac-Toe!</h1>
+
+      <h6 id="message">Welcome!</h6>
 
       <section id="game-board" class="container">
         <div class="row row-cols-3">
-          <div id="0" class="col border-bottom border-end"></div>
-          <div id="1" class="col border-bottom"></div>
-          <div id="2" class="col border-bottom border-start"></div>
-          <div id="3" class="col border-bottom border-end"></div>
-          <div id="4" class="col"></div>
-          <div id="5" class="col border-bottom border-start"></div>
-          <div id="6" class="col border-end"></div>
-          <div id="7" class="col border-top"></div>
-          <div id="8" class="col border-start"></div>
+          <div id="0" data-cell-index="0" class="col border-bottom border-end"></div>
+          <div id="1" data-cell-index="1" class="col border-bottom"></div>
+          <div id="2" data-cell-index="2" class="col border-bottom border-start"></div>
+          <div id="3" data-cell-index="3" class="col border-bottom border-end"></div>
+          <div id="4" data-cell-index="4" class="col"></div>
+          <div id="5" data-cell-index="5" class="col border-bottom border-start"></div>
+          <div id="6" data-cell-index="6" class="col border-end"></div>
+          <div id="7" data-cell-index="7" class="col border-top"></div>
+          <div id="8" data-cell-index="8" class="col border-start"></div>
         </div>
       </section>
 
-
-
-
       <section id="user-account-actions">
+
         <div id="buttons">
-          <button id="signUpButton" class="btn btn-primary" type="button">Sign-Up</button>
-          <button id="signInButton" class="btn btn-primary" type="button">Sign-In</button>
-          <button id="signOutButton" class="btn btn-primary" type="button">Sign-Out</button>
-          <button id="newGameButton"  class="btn btn-primary" type="button">New Game</button>
+          <button id="signUpButton" type="button">Sign-Up</button>
+          <button id="signInButton" type="button">Sign-In</button>
+          <button id="signOutButton" type="button">Sign-Out</button>
+          <button id="newGameButton" type="button">New Game</button>
         </div>
 
         <form id="sign-up">
           <h3>Sign-Up</h3>
-          <label for="signUpEmail" class="form-table">Email address</label>
-          <input name="credentials[email]" id="signUpEmail" class="form-control" type="text">
-          <label for="signUpPassword" class="form-table">Password</label>
-          <input name="credentials[password]" id="signUpPassword" class="form-control" type="password">
-          <label for="signUpPasswordConfirmation" class="form-table">Confirm Password</label>
-          <input name="credentials[password_confirmation]" id="signUpPasswordConfirmation" class="form-control" type="password">
-          <input type="submit" value="Sign-Up" class="btn btn-primary">
+          <label for="signUpEmail">Email address</label>
+          <input name="credentials[email]" id="signUpEmail" type="text">
+          <label for="signUpPassword">Password</label>
+          <input name="credentials[password]" id="signUpPassword" type="password">
+          <label for="signUpPasswordConfirmation">Confirm Password</label>
+          <input name="credentials[password_confirmation]" id="signUpPasswordConfirmation" type="password">
+          <input type="submit" value="Sign-Up">
         </form>
 
         <form id="sign-in">
           <h3>Sign-In</h3>
-          <label for="signInEmail" class="form-table">Email address</label>
-          <input name="credentials[email]" id="signInEmail" class="form-control" type="text">
-          <label for="signInPassword" class="form-table">Password</label>
-          <input name="credentials[password]" id="signInPassword" class="form-control" type="password">
-          <input type="submit" value="Sign-In" class="btn btn-primary">
+          <label for="signInEmail">Email address</label>
+          <input name="credentials[email]" id="signInEmail" type="text">
+          <label for="signInPassword">Password</label>
+          <input name="credentials[password]" id="signInPassword" type="password">
+          <input type="submit" value="Sign-In">
         </form>
       </section>
-
-
     </body>
 </html>

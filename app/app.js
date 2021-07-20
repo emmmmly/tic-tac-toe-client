@@ -14,7 +14,7 @@ $(() => {
     $('#sign-in').hide()
   })
   $('#signInButton').on('click', () => {
-    console.log('sign-up clicked')
+    console.log('sign-in clicked')
     $('#signUpButton').show()
     $('#signInButton').hide()
     $('#sign-in').show()
@@ -31,4 +31,5 @@ $(() => {
 
   // game board listeners
   $('#newGameButton').on('click', authEvents.onNewGame)
+  $('#game-board').on('click', authEvents.onSpaceSelection)
 })
