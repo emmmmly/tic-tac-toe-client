@@ -58,7 +58,9 @@ const onSpaceSelection = function (event) {
 
   // creates a container variable to store the data-cell-index (dataset) number of the clicked (event)
   const cellIndex = target.dataset.cellIndex
+  // checks if clicked cell is empty
   if ($(target).is(':empty')) {
+    // if it is empty it updates the clicked element to display the currentPlayer's icon, creates a game variable to pass into the api Patch request
     $(target).text(currentPlayer)
     console.log(currentPlayer)
     const game = {
@@ -68,17 +70,22 @@ const onSpaceSelection = function (event) {
       },
       over: false
     }
-    console.log('cellIndex is', cellIndex)
+    // invokes the api request function
     api.gameUpdate(game)
       .then(ui.onGameUpdate)
       .catch(ui.onFailure)
+
+    // changes xTurn to be the opposite of whatever it currently is.
     xTurn = !xTurn
-    // is xTurn true? if yes then "X" if false then "O"
+
+    // change player after click
     currentPlayer = xTurn ? 'X' : 'O'
+    // updates display message to show who's turn it is
     $('#message').text(`It's ${currentPlayer}'s Turn!`)
+
     return xTurn
   } else {
-    $('#message').text('Oops! That cell is taken. Please choose another.')
+    $('#message').text('Oops! That cell is taken, please choose another.')
   }
 }
 
