@@ -12,6 +12,7 @@ $(() => {
     $('#signInButton').show()
     $('#sign-up').show()
     $('#sign-in').hide()
+    $('.form-control').trigger('reset')
   })
   $('#signInButton').on('click', () => {
     console.log('sign-in clicked')
@@ -19,6 +20,7 @@ $(() => {
     $('#signInButton').hide()
     $('#sign-in').show()
     $('#sign-up').hide()
+    $('.form-control').trigger('reset')
   })
   $('#signOutButton').hide()
   $('#newGameButton').hide()

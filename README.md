@@ -1,7 +1,7 @@
 
 
 # Tic-Tac-Toe: A Strategy Game
- This application will allow users to test their wits against another player in the classic game of tic-tac-toe. This project is my first ever project as a software developer. 
+ This application will allow users to test their wits against another player in the classic game of tic-tac-toe. 
 
 ## Important Links
 https://caldonic7.github.io/tic-tac-toe-client/

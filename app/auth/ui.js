@@ -3,15 +3,16 @@
 const store = require('../store')
 // TO DO: write a function to handle the various shows and hides
 
-
 const onSignUpSuccess = function (response) {
   console.log('in then for sign-up')
-  console.log(response)
+  store.email = response.user.email
   $('#message').text('Great Success! Thanks for signing up')
   $('#message').show()
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#signInButton').hide()
+  $('#signUpButton').show()
+  $('.form-control').trigger('reset')
 }
 
 const onSignInSuccess = function (response) {
@@ -24,6 +25,7 @@ const onSignInSuccess = function (response) {
   $('#signInButton').hide()
   $('#signOutButton').show()
   $('#newGameButton').show()
+  $('.form-control').trigger('reset')
 }
 
 const onSignOutSuccess = function () {
@@ -35,6 +37,7 @@ const onSignOutSuccess = function () {
   $('#game-board').hide()
   $('#newGameButton').hide()
   $('#message').delay(3000).fadeTo(1500, $('#message').text('Welcome'))
+  $('.form-control').trigger('reset')
 }
 
 const onNewGameSuccess = function (response) {
