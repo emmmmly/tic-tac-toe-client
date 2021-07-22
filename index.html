@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe: a strategy game!</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1 class="h1">Tic-Tac-Toe!</h1>
+
+      <h6 id="message">Welcome!</h6>
+
+      <section id="game-board" class="container">
+        <div class="row row-cols-3">
+          <div id="0" data-cell-index="0" class="col border-bottom border-end"></div>
+          <div id="1" data-cell-index="1" class="col border-bottom"></div>
+          <div id="2" data-cell-index="2" class="col border-bottom border-start"></div>
+          <div id="3" data-cell-index="3" class="col border-bottom border-end"></div>
+          <div id="4" data-cell-index="4" class="col"></div>
+          <div id="5" data-cell-index="5" class="col border-bottom border-start"></div>
+          <div id="6" data-cell-index="6" class="col border-end"></div>
+          <div id="7" data-cell-index="7" class="col border-top"></div>
+          <div id="8" data-cell-index="8" class="col border-start"></div>
+        </div>
+      </section>
+
+      <section id="user-account-actions">
+
+        <div id="buttons">
+          <button id="signUpButton" type="button">Sign-Up</button>
+          <button id="signInButton" type="button">Sign-In</button>
+          <button id="signOutButton" type="button">Sign-Out</button>
+          <button id="newGameButton" type="button">New Game</button>
+          <button id="backButton1" type="button">Back</button>
+        </div>
+
+        <form id="sign-up" class="form-control">
+          <h3>Sign-Up</h3>
+          <label for="signUpEmail">Email address</label>
+          <input name="credentials[email]" id="signUpEmail" type="text">
+          <label for="signUpPassword">Password</label>
+          <input name="credentials[password]" id="signUpPassword" type="password">
+          <label for="signUpPasswordConfirmation">Confirm Password</label>
+          <input name="credentials[password_confirmation]" id="signUpPasswordConfirmation" type="password">
+          <input type="submit" value="Sign-Up">
+        </form>
+
+        <form id="sign-in" class="form-control">
+          <h3>Sign-In</h3>
+          <label for="signInEmail">Email address</label>
+          <input name="credentials[email]" id="signInEmail" type="text" >
+          <label for="signInPassword">Password</label>
+          <input name="credentials[password]" id="signInPassword" type="password">
+          <input type="submit" value="Sign-In">
+        </form>
+      </section>
+    </body>
+</html>
