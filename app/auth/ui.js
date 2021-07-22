@@ -3,6 +3,7 @@
 const store = require('../store')
 // TO DO: write a function to handle the various shows and hides
 
+
 const onSignUpSuccess = function (response) {
   console.log('in then for sign-up')
   console.log(response)
@@ -33,16 +34,18 @@ const onSignOutSuccess = function () {
   $('#signInButton').show()
   $('#game-board').hide()
   $('#newGameButton').hide()
-  $('#message').hide(3000)
+  $('#message').delay(3000).fadeTo(1500, $('#message').text('Welcome'))
 }
 
 const onNewGameSuccess = function (response) {
   console.log('in then for new game')
   store.game = response.game
-  console.log('game id is ', store.game._id)
 }
-const onGameUpdate = function (response) {
+const onGameUpdateSuccess = function (response) {
   console.log('in then for game update')
+  store.game = response.game
+  store.playedCellsArray = store.game.cells
+  console.log('api game is over', response.game.over)
 }
 
 const onFailure = function () {
@@ -55,6 +58,6 @@ module.exports = {
   onSignInSuccess,
   onSignOutSuccess,
   onNewGameSuccess,
-  onGameUpdate,
+  onGameUpdateSuccess,
   onFailure
 }

@@ -1,5 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
+.h1 {
+  position: relative;
+  text-align: center;
+}
+#message {
+  position: relative;
+  text-align: center;
+}
 
 .row {
   width: 300px;
