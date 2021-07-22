@@ -11,7 +11,6 @@ const onSignUpSuccess = function (response) {
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#signInButton').hide()
-  $('#signUpButton').show()
   $('.form-control').trigger('reset')
 }
 
@@ -20,23 +19,26 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text(`Great Success! You are signed in as ${store.user.email}`)
   $('#message').show()
-  $('#sign-in').hide()
-  $('#signUpButton').hide()
-  $('#signInButton').hide()
   $('#signOutButton').show()
   $('#newGameButton').show()
+  $('#signUpButton').hide()
+  $('#signInButton').hide()
+  $('#backButton1').hide()
+  $('#sign-in').hide()
   $('.form-control').trigger('reset')
 }
 
 const onSignOutSuccess = function () {
   console.log('in then for Sign Out')
   $('#message').text('Great Success! You are now signed out')
-  $('#signOutButton').hide()
   $('#signUpButton').show()
   $('#signInButton').show()
-  $('#game-board').hide()
+  $('#backButton1').hide()
+  $('#signOutButton').hide()
   $('#newGameButton').hide()
-  $('#message').delay(3000).fadeTo(1500, $('#message').text('Welcome'))
+  $('#game-board').hide()
+  setTimeout(() => {$('#message').text('Welcome!')}, 3500)
+
   $('.form-control').trigger('reset')
 }
 

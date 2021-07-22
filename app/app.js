@@ -6,26 +6,38 @@ $(() => {
   // show and hide elements
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#backButton1').hide()
+  $('#signOutButton').hide()
+  $('#newGameButton').hide()
+  $('#game-board').hide()
+
+  // button listeners
   $('#signUpButton').on('click', () => {
     console.log('sign-up clicked')
-    $('#signUpButton').hide()
-    $('#signInButton').show()
+    $('#backButton1').show()
     $('#sign-up').show()
+    $('#signUpButton').hide()
+    $('#signInButton').hide()
     $('#sign-in').hide()
     $('.form-control').trigger('reset')
   })
   $('#signInButton').on('click', () => {
     console.log('sign-in clicked')
-    $('#signUpButton').show()
-    $('#signInButton').hide()
+    $('#backButton1').show()
     $('#sign-in').show()
+    $('#signUpButton').hide()
+    $('#signInButton').hide()
     $('#sign-up').hide()
     $('.form-control').trigger('reset')
   })
-  $('#signOutButton').hide()
-  $('#newGameButton').hide()
-  $('#game-board').hide()
-
+  $('#backButton1').on('click', () => {
+    console.log('back button 1 clicked')
+    $('#signInButton').show()
+    $('#signUpButton').show()
+    $('#sign-up').hide()
+    $('#sign-in').hide()
+    $('#backButton1').hide()
+  })
   // form listeners
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
